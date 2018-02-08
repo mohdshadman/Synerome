@@ -1,18 +1,164 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+        <ion-title>Synerome</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+    <div id="synlogo">
+        <ion-img width="300" height="80" src="assets/imgs/synerome.png"></ion-img>
+    </div>
+    <ion-item no-lines>
+        <h2 id="personalinfo">Personal Informations</h2>
+    </ion-item>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <!--<ion-item no-lines>
+    <ion-label>What is your current gender?</ion-label>
+  
+
+  <ion-item>
+    <ion-label>What is your birth gender?</ion-label>
+   
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>What is your date of birth?</ion-label>
+   
+  </ion-item>
+
+     <ion-item>
+    <ion-label>What is your body weight?</ion-label>
+   
+  </ion-item>
+
+<ion-item>
+    <ion-label>What is your race?</ion-label>
+   
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Have you done DNA test ?</ion-label>
+   
+  </ion-item>
+-->
+
+    <ion-grid>
+
+        <ion-row radio-group [(ngModel)]="currentGender" justify-content-start>
+
+            <ion-col col-auto>
+                What is your current gender?
+            </ion-col>
+            <ion-col col-auto>
+                <ion-radio value="m"></ion-radio>M
+            </ion-col>
+            <ion-col col-auto>
+                <ion-radio value="f"></ion-radio>F
+            </ion-col>
+
+        </ion-row>
+
+        <ion-row radio-group [(ngModel)]="birthGender" justify-content-start>
+
+            <ion-col col-auto>
+                What is your birth gender?
+            </ion-col>
+            <ion-col col-auto>
+                <ion-radio value="m"></ion-radio>M
+            </ion-col>
+            <ion-col col-auto>
+                <ion-radio value="f"></ion-radio>F
+            </ion-col>
+
+        </ion-row>
+
+        <ion-row justify-content-start>
+
+            <ion-col col-auto>
+                What is your date of birth?
+            </ion-col>
+
+              <ion-input type="text" placeholder="M/DD/YYYY" [(ngModel)]="dataDate"></ion-input>
+
+
+            <ion-col col-auto>
+
+               
+            </ion-col>
+
+            <ion-col col-auto>
+                <ion-buttons text-center>
+
+                    <button clear style="background-color:#f6f7f8" icon-left (click)="showDatePicker()">
+        <ion-icon name="calendar">
+        </ion-icon>
+      </button>
+                </ion-buttons>
+            </ion-col>
+
+
+        </ion-row>
+        <!--<ion-row>
+    <ion-col>
+      1 of 4
+    </ion-col>
+    <ion-col>
+      2 of 4
+    </ion-col>
+    <ion-col col-auto>
+      <ion-input placeholder="Variable width input"></ion-input>
+    </ion-col>
+    <ion-col>
+      4 of 4
+    </ion-col>
+  </ion-row>-->
+   
+     <ion-row>
+    <ion-col col-auto>
+      What is your body weight?
+    </ion-col>
+    <ion-col>
+       <ion-input type="number" placeholder="Kg/lbs"></ion-input>
+    </ion-col>
+        </ion-row>
+       
+       <ion-row>
+    <ion-col col-auto>
+      What is your race?
+    </ion-col>
+    <ion-col col-auto>
+      
+       <ion-select [(ngModel)]="race">
+      <ion-option value="caucasian" selected="true">Causian</ion-option>
+      <ion-option value="mongoloid">Mongoloid</ion-option>
+      <ion-option value="malay">Malay</ion-option>
+      <ion-option value="negroid">Negroid</ion-option>
+      <ion-option value="american">American</ion-option>
+    </ion-select>
+        
+        </ion-col>
+        </ion-row>
+       
+      
+ <ion-row radio-group [(ngModel)]="dnatest" justify-content-start>
+
+            <ion-col text-wrap>
+               Have you done a DNA test before?
+            </ion-col>
+            <ion-col col-auto>
+                <ion-radio value="y"></ion-radio>Y
+            </ion-col>
+            <ion-col col-auto>
+                <ion-radio value="n"></ion-radio>N
+            </ion-col>
+
+        </ion-row>
+ </ion-grid>
+ <div id="next">
+     <button ion-button round>Next</button>
+ </div>
 </ion-content>
